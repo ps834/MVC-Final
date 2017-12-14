@@ -9,6 +9,7 @@ abstract class model
     public function save()
     {
 
+        $INSERT = FALSE;
         if($this->validate() == FALSE) {
             echo 'failed validation';
             exit;
@@ -16,8 +17,10 @@ abstract class model
 
 
         if ($this->id != '') {
+        echo "In update";            
             $sql = $this->update();
         } else {
+            echo "In Insert";            
             $sql = $this->insert();
             $INSERT = TRUE;
         }
@@ -35,6 +38,7 @@ abstract class model
             $statement->bindParam(":$value", $this->$value);
         }
         $statement->execute();
+
         if ($INSERT == TRUE) {
 
             $this->id = $db->lastInsertId();
@@ -68,6 +72,7 @@ abstract class model
     private function update()
     {
 
+        echo "Update function";
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
@@ -81,6 +86,8 @@ abstract class model
             }
         }
         $sql .= ' WHERE id=' . $this->id;
+
+        echo  $sql;
         return $sql;
 
     }
@@ -92,7 +99,7 @@ abstract class model
         $tableName = $modelName::getTablename();
         $sql = 'DELETE FROM ' . $tableName . ' WHERE id=' . $this->id;
         $statement = $db->prepare($sql);
-        $statement->execute();
+            $statement->execute();
     }
 }
 

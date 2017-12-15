@@ -127,13 +127,15 @@ class accountsController extends http\controller
 
             if($user->checkPassword($_POST['password']) == TRUE) {
 
-                echo 'login';
-
                 session_start();
+
+
                 $_SESSION["userID"] = $user->id;
 
                 //forward the user to the show all todos page
-                print_r($_SESSION);
+                print($user->fname);
+
+
             } else {
                 echo 'password does not match';
             }

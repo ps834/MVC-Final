@@ -77,7 +77,7 @@ class tasksController extends http\controller
     }
 
     public static function insertTasks(){
-        
+
         self::getTemplate('insertTask');
     }
 

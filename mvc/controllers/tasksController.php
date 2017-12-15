@@ -59,10 +59,12 @@ class tasksController extends http\controller
     
     //this is used to save the update form data
     public static function save() {
-    
-        echo "Inside Save";
-        $user = todos::findOne($_REQUEST['id']);
-        $user->id = $_POST['id'];        
+
+        $user = new todo();
+        if(isset($_REQUEST['id'])==1){
+            echo "inside id ";
+            $user = todos::findOne($_REQUEST['id']);
+        }
         $user->owneremail = $_POST['email'];
         $user->ownerid = $_POST['ownerid'];
         $user->createddate = $_POST['createddate'];

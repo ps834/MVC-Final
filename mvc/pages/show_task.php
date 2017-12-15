@@ -32,19 +32,15 @@ print utility\htmlTable::generateTableFromOneRecord($data);
     Due Date: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
     Message: <input type="text" name="message" value="<?php echo $data->message; ?>"><br>
     Status: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
-
-    <input type="submit" value="Submit form">
+    <br>
+    <input type="submit" value="Update Task">
 </form>
 
-
+<br>
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
 </form>
 
-
-<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="insertForm">
-    <button type="submit" form="form1" value="delete">Insert Data</button>
-</form>
 
 
 

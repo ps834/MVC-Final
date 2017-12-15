@@ -138,6 +138,14 @@ class routes
         $route->method = 'save';
         $routes[] = $route;
 
+        $route = new route();
+        $route->http_method = 'POST';
+        $route->action = 'insertTasks';
+        $route->page = 'tasks';
+        $route->controller = 'tasksController';
+        $route->method = 'insertTasks';
+        $routes[] = $route;
+
         //this is the route for the reg form
         $route = new route();
         $route->http_method = 'GET';
@@ -146,6 +154,7 @@ class routes
         $route->controller = 'accountsController';
         $route->method = 'register';
         $routes[] = $route;
+
         //this handles the reg post to create the user
         $route = new route();
         $route->http_method = 'POST';

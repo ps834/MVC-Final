@@ -10,7 +10,8 @@ class controller
     static public function getTemplate($template, $data = NULL)
     {
 
-        $template = 'pages/' . $template . '.php';
+
+        $template = 'pages/' . $template . '.php';        
 //in your template you should use $data to access your array
         include $template;
 

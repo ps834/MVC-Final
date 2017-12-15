@@ -76,6 +76,11 @@ class tasksController extends http\controller
 
     }
 
+    public static function insertTasks(){
+        
+        self::getTemplate('insertTask');
+    }
+
 
     //this would be for the post for sending the task edit form
     public static function store()

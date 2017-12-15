@@ -26,24 +26,24 @@
 
     ?> </h1>
 
-<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>
-<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
+<h3><a href="index.php?page=accounts&action=register">Sign up</a></h3>
+
 
 <form action="index.php?page=accounts&action=login" method="POST">
 
-    <div class="container">
+    <div class="container" align="center">
+        <h3> Log In </h3><br>
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="email" required>
-
-        <label><b>Password</b></label>
+        <br><br>
+        <label><b>Password</b></label>&nbsp;
         <input type="password" placeholder="Enter Password" name="password" required>
-
+        <br><br>
         <button type="submit">Login</button>
     </div>
 
 
 </form>
-<h1><a href="index.php?page=accounts&action=register">Register</a></h1>
 
 
 <script src="js/scripts.js"></script>

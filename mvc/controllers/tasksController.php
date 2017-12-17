@@ -88,8 +88,19 @@ class tasksController extends http\controller
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
+        
+        
         $tasks = todos::findTasks($_SESSION["userID"]);
-        self::getTemplate('profilePage', $tasks);
+        
+       
+
+       if (empty($tasks)) {
+            echo "No Tasks found";
+        }else{
+        
+          echo "inside profile page";
+         self::getTemplate('profilePage', $tasks);
+        }
 
     }
 

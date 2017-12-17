@@ -11,10 +11,6 @@ div {
    
 }
 
-p {
-  
-  text-color:red;
-}
 
 
 </style>
@@ -25,12 +21,15 @@ p {
   
   
   <?php
-               if(session_status() == PHP_SESSION_NONE){
+      
+      
+      if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
         
-        echo "Hello ";
-                 print_r($_SESSION["name"]);
+      echo "<b>Hello </b> ";
+      $name = $_SESSION["name"];
+      print("<b>$name</b>");
   ?>
   
       <form action="index.php?page=accounts&action=logout" id="logout">

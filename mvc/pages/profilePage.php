@@ -26,7 +26,9 @@
  	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
 	    <button type="submit" form="insertForm" value="Insert a Task">Insert a Task</button>
 	</form>
- 
+  	<form action="index.php?page=tasks&action=insertTasks" method="post" id="myProfileForm">
+	    <button type="submit" form="myProfileForm" value="myProfile">My Profile</button>
+	</form>
  <br>
 
 <!--<h5><a href="index.php?page=accounts&action=all">Show All Accounts</a></h5>

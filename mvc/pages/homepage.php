@@ -24,7 +24,7 @@
     echo $data['site_name'];
     ?> </h1>
 
-<h3><a href="index.php?page=accounts&action=register">Sign up</a></h3>
+<h3><a href="index.php?page=accounts&action=register" style="text-decoration:none;">Sign up</a></h3>
 
 
 <form action="index.php?page=accounts&action=login" method="POST">

@@ -59,6 +59,21 @@ abstract class collection
             return $recordsSet[0];
         }
     }
+
+
+    static public function findTasks($id)
+    {
+        $tableName = get_called_class();
+        $sql = 'SELECT * FROM ' . $tableName . ' WHERE userid = ?';
+        //grab the only record for find one and return as an object
+        $recordsSet = self::getResults($sql, $id);
+
+        if (is_null($recordsSet)) {
+            return FALSE;
+        } else {
+            return $recordsSet;
+        }
+    }
 }
 
 ?>

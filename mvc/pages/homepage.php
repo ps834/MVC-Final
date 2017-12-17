@@ -20,10 +20,8 @@
 
 <h1>
     <?php
-
     //this how to print some data;
     echo $data['site_name'];
-
     ?> </h1>
 
 <h3><a href="index.php?page=accounts&action=register">Sign up</a></h3>

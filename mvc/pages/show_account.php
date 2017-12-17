@@ -25,6 +25,9 @@
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
 
+session_start();
+print_r($_SESSION);
+
 print utility\htmlTable::generateTableFromOneRecord($data);
 
 
@@ -33,7 +36,6 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
     First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
-
     Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
     Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
     Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br>

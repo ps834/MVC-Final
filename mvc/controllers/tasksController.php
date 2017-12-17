@@ -10,6 +10,7 @@
 //each page extends controller and the index.php?page=tasks causes the controller to be called
 class tasksController extends http\controller
 {
+    
     //each method in the controller is named an action.
     //to call the show function the url is index.php?page=task&action=show
     public static function show()
@@ -66,6 +67,9 @@ class tasksController extends http\controller
 
             $user = todos::findOne($_REQUEST['id']);
         }
+
+        session_start();
+
         
         $user->owneremail = $_POST['email'];
         $user->ownerid = $_POST['ownerid'];
@@ -73,13 +77,22 @@ class tasksController extends http\controller
         $user->duedate = $_POST['duedate'];
         $user->message = $_POST['message'];
         $user->isdone = $_POST['isdone'];
+        $user->userid = $_SESSION["userID"];
         $user->save();
-        header("Location: index.php?page=tasks&action=all");
+        self::goToProfile();
+
+    }
+
+    public static function goToProfile(){
+        
+        session_start();
+        $tasks = todos::findTasks($_SESSION["userID"]);
+        self::getTemplate('profilePage', $tasks);
 
     }
 
     public static function insertTasks(){
-
+    
         self::getTemplate('insertTask');
     }
 
@@ -115,5 +128,7 @@ class tasksController extends http\controller
         print_r($_POST);
 
     }
+
+
 
 }

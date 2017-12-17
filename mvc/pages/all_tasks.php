@@ -19,7 +19,8 @@
 
 <?php
 //this is how you print something
-
+session_start();
+print_r($_SESSION);
 print utility\htmlTable::genarateTableFromMultiArray($data);
 
 

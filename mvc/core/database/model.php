@@ -17,10 +17,10 @@ abstract class model
 
 
         if ($this->id != '') {
-        echo "In update";            
+                   
             $sql = $this->update();
         } else {
-            echo "In Insert";            
+                   
             $sql = $this->insert();
             $INSERT = TRUE;
         }
@@ -72,7 +72,6 @@ abstract class model
     private function update()
     {
 
-        echo "Update function";
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($this);
@@ -87,7 +86,6 @@ abstract class model
         }
         $sql .= ' WHERE id=' . $this->id;
 
-        echo  $sql;
         return $sql;
 
     }

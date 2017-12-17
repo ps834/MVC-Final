@@ -1,18 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:25 PM
- */
+
 
 include_once "autoload.php";
 
-class routes
-{
+class routes{
 
-    public static function getRoutes()
-    {
+    public static function getRoutes(){
+
+
         //bellow adds routes to your program, routes match the URL and request method with the controller and method.
         //You need to follow this pattern to add new URLS
         //You should improve this function by making functions to create routes in a factory. I will look for this when grading
@@ -190,7 +185,7 @@ class routes
         //this adds the route to the routes array.
         $routes[] = $route;*/
 
-        $route = new route();
+ 
         $routes[] = routeFactory::create('GET','show','homepage','homepageController','show'); 
         $routes[] = routeFactory::create('POST','create','homepage','homepageController','create'); 
         $routes[] = routeFactory::create('GET','show','tasks','tasksController','show'); 
@@ -208,6 +203,8 @@ class routes
         $routes[] = routeFactory::create('POST','insertTasks','tasks','tasksController','insertTasks');
         $routes[] = routeFactory::create('GET','register','accounts','accountsController','register');
         $routes[] = routeFactory::create('POST','register','accounts','accountsController','store');
+        $routes[] = routeFactory::create('GET','logout','accounts','accountsController','logout');
+        $routes[] = routeFactory::create('GET','goToProfile','tasks','tasksController','goToProfile');
 
 
         return $routes;

@@ -10,24 +10,30 @@
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
 </head>
 
 <body>
 
 <?php
 
- print("Hello $data->fname");
-
+// print("Hello $data->owneremail");
 
  ?>
 
 <h5><a href="index.php?page=accounts&action=all">Show All Accounts</a></h5>
 <h5><a href="index.php?page=tasks&action=all">Show All Tasks</a></h5>
+<h5><a href="index.php?page=accounts&action=logout">Logout</a></h5>
+<?php
 
+print utility\htmlTable::genarateTableFromMultiArray($data);
 
-    <script src="js/scripts.js"></script>
+ ?>
+
+<br><br>
+	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
+	    <button type="submit" form="insertForm" value="Insert a Task">Insert a Task</button>
+	</form>
+
+<script src="js/scripts.js"></script>
 </body>
 </html>

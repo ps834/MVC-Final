@@ -23,7 +23,12 @@ class request
 //this checks if page is set
         if (!empty($_GET['page'])) {
             $page = $_GET['page'];
+            
         }
+       if(session_status()==PHP_SESSION_NONE){ 
+          session_start();
+        }
+        $_SESSION["page"]=$page;
         return $page;
     }
 

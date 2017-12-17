@@ -9,6 +9,16 @@
     <meta name="author" content="SitePoint">
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
+    
+    <style>
+    body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  label {    
+    padding-top:1%;
+    padding-left:26px;
+    }
+    </style>
 
 </head>
 

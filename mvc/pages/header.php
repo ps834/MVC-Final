@@ -3,43 +3,71 @@
 <head>
 <style>
 
-div {
+.divStyle {
     background-color: lightblue;
-    width:1350px;
-    height:100px;
+    width:100%;
+    height:18%;
+    margin-top:-20px;
 
    
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  
+button {
 
+      width:85px; 
+      height:40px;
+      padding-top:8px;
+      padding-left:12px;
+
+}
+
+h1 {
+  padding-top:35px;
+  padding-left:20px;
+}
 
 </style>
 </head>
 <body>
 
-<div>
+<div class="divStyle">
   
   
-  <?php
+    
+  <h1>MVC Home</h1>  
+  
+  <?php  if($_SESSION["page"] != "register"){ 
       
       
       if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
         
-      echo "<b>Hello </b> ";
-      $name = $_SESSION["name"];
-      print("<b>$name</b>");
-  ?>
+
+?>
   
-      <form action="index.php?page=accounts&action=logout" id="logout">
+      <!--<form action="index.php?page=accounts&action=logout" id="logout">
       
           <button type="submit" form="logout" value="logout" >Logout</button>
   
-      </form>
-      <br><br>
-      &nbsp;<a href="index.php?page=accounts&action=getMyProfile" style="text-decoration:none;">My Profile</a> &nbsp;
-     <!-- <a href="index.php?page=accounts&action=callEditProfile" style="text-decoration:none;">Edit Profile</a>-->
+      </form>-->
+      
+
+      <div class="row">
+        <div class="col-sm-2"><label><?php print("<b>Hello " . $_SESSION['name'] . " </b>"); ?></label></div>
+        <div class="col-sm-8"></div>
+        <div class="col-sm-1"><a href="index.php?page=accounts&action=getMyProfile" style="text-decoration:none;">My Profile</a></div>
+        <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> &nbsp;</div>
+      </div>
+     
+     
+     
+      <?php }?>
 </div>
 
 </body>

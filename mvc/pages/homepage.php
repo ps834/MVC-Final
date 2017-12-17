@@ -84,7 +84,7 @@ span {
         <br>
         <button type="submit" class="btn btn-info active" >Login</button>
         <br><br>
-        <h6><a href="index.php?page=accounts&action=register" style="text-decoration:none;">Sign up</a></h6>
+        <h6><a href="index.php?page=accounts&action=register" style="text-decoration:none;">Not a member yet? Create an account</a></h6>
     <div>
     <div class="modal-footer"></div>
     </div>

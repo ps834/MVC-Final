@@ -17,21 +17,24 @@
 
 <body>
 
-<h1>Email: <?php echo $data->email; ?></h1>
-<h1>First Name: <?php echo $data->fname; ?></h1>
-<h1>Last Name: <?php echo $data->lname; ?></h1>
 
+<!--<h1>Email: <?php echo $data->email; ?></h1>
+<h1>First Name: <?php echo $data->fname; ?></h1>
+<h1>Last Name: <?php echo $data->lname; ?></h1>-->
 
 <?php
+
+include "header.php";
+
+
 //this is how you print something  $data contains the record that was selected on the table.
 
-session_start();
-print_r($_SESSION);
-
+print "<br><br>";
 print utility\htmlTable::generateTableFromOneRecord($data);
 
 
 ?>
+
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
@@ -47,7 +50,7 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
-</form>
+</form> 
 
 
 <script src="js/scripts.js"></script>

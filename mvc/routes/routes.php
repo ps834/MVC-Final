@@ -205,8 +205,8 @@ class routes{
         $routes[] = routeFactory::create('POST','register','accounts','accountsController','store');
         $routes[] = routeFactory::create('GET','logout','accounts','accountsController','logout');
         $routes[] = routeFactory::create('GET','goToProfile','tasks','tasksController','goToProfile');
-
-
+        $routes[] = routeFactory::create('GET','getMyProfile','accounts','accountsController','getMyProfile');
+        $routes[] = routeFactory::create('GET','callEditProfile','accounts','accountsController','callEditProfile');
         return $routes;
     }
 

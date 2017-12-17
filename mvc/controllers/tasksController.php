@@ -97,8 +97,6 @@ class tasksController extends http\controller
        if (empty($tasks)) {
             echo "No Tasks found";
         }else{
-        
-          echo "inside profile page";
          self::getTemplate('profilePage', $tasks);
         }
 

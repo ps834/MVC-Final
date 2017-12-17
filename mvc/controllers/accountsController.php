@@ -90,8 +90,8 @@ class accountsController extends http\controller
     }
 //this is used to save the update form data
     public static function save() {
+    
         $user = accounts::findOne($_REQUEST['id']);
-
         $user->email = $_POST['email'];
         $user->fname = $_POST['fname'];
         $user->lname = $_POST['lname'];
@@ -156,6 +156,29 @@ class accountsController extends http\controller
         header("Location:index.php?page=homepage&action=show");
         exit();
 
+    }
+    
+    public static function getMyProfile(){
+    
+    
+      if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
+        $record = accounts::findOne($_SESSION["userID"]);
+        
+        self::getTemplate('show_account', $record);
+      
+    }
+    
+    public static function callEditProfile(){
+    
+      if(session_status() == PHP_SESSION_NONE){
+              session_start();
+      }
+      $record = accounts::findOne($_SESSION["userID"]);
+      self::getTemplate('edit_account', $record);
+    
+    
     }
 
 }

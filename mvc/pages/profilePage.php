@@ -22,8 +22,17 @@
 
  ?>
 
-<h5><a href="index.php?page=accounts&action=all">Show All Accounts</a></h5>
-<h5><a href="index.php?page=tasks&action=all">Show All Tasks</a></h5>
+<br> 
+ 	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
+	    <button type="submit" form="insertForm" value="Insert a Task">Insert a Task</button>
+	</form>
+ 
+ <br>
+
+<!--<h5><a href="index.php?page=accounts&action=all">Show All Accounts</a></h5>
+<h5><a href="index.php?page=tasks&action=all">Show All Tasks</a></h5>-->
+
+
 <?php
 
 print utility\htmlTable::genarateTableFromMultiArray($data);
@@ -31,9 +40,7 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
  ?>
 
 <br><br>
-	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
-	    <button type="submit" form="insertForm" value="Insert a Task">Insert a Task</button>
-	</form>
+
 
 <script src="js/scripts.js"></script>
 </body>

@@ -68,7 +68,7 @@ class accountsController extends http\controller
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=homepage&action=show");
+              header("Location: index.php?page=homepage&action=show");
 
         } else {
             //You can make a template for errors called error.php
@@ -132,9 +132,10 @@ class accountsController extends http\controller
                 session_start();
 
                 $_SESSION["userID"] = $user->id;
-                print_r($_SESSION["userID"]);
-
-                header("Location: index.php?page=tasks&action=goToProfile");
+                $_SESSION["name"] = $user->fname;
+                
+       
+               header("Location: index.php?page=tasks&action=goToProfile");
 
  /*             $tasks = todos::findTasks($_SESSION["userID"]);
               self::getTemplate('profilePage', $tasks);*/

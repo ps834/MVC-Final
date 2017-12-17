@@ -39,7 +39,7 @@ div {
       </form>
       <br><br>
       &nbsp;<a href="index.php?page=accounts&action=getMyProfile" style="text-decoration:none;">My Profile</a> &nbsp;
-      <a href="index.php?page=accounts&action=callEditProfile" style="text-decoration:none;">Edit Profile</a>
+     <!-- <a href="index.php?page=accounts&action=callEditProfile" style="text-decoration:none;">Edit Profile</a>-->
 </div>
 
 </body>

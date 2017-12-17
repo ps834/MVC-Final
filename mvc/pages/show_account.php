@@ -26,14 +26,27 @@
 
 include "header.php";
 
+?>
 
-//this is how you print something  $data contains the record that was selected on the table.
-
-print "<br><br>";
+  <!--    <form action="index.php?page=accounts&action=callEditProfile" id="editProfile">
+      
+          <button type="submit" value="editProfile" >Edit Profile</button>
+  
+      </form>-->
+      <br><br>
+      <a href="index.php?page=accounts&action=callEditProfile" style="text-decoration:none;margin-left:1150px;">Edit Profile</a>
+  <img src="images/Delete_Icon.png" alt="Delete" height="35" width="35">
+      
+      
+<br><br>
+<?php
 print utility\htmlTable::generateTableFromOneRecord($data);
 
 
 ?>
+
+
+
 
 <!--
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">

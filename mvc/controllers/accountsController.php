@@ -172,6 +172,7 @@ class accountsController extends http\controller
     
     public static function callEditProfile(){
     
+    
       if(session_status() == PHP_SESSION_NONE){
               session_start();
       }

@@ -68,7 +68,7 @@ class accountsController extends http\controller
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=accounts&action=all");
+            header("Location: index.php?page=homepage&action=show");
 
         } else {
             //You can make a template for errors called error.php

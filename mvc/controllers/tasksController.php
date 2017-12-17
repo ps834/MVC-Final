@@ -85,7 +85,9 @@ class tasksController extends http\controller
 
     public static function goToProfile(){
         
-        session_start();
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
         $tasks = todos::findTasks($_SESSION["userID"]);
         self::getTemplate('profilePage', $tasks);
 

@@ -16,13 +16,14 @@
 
 <?php
 
+
+  include "header.php";
 // print("Hello $data->owneremail");
 
  ?>
 
 <h5><a href="index.php?page=accounts&action=all">Show All Accounts</a></h5>
 <h5><a href="index.php?page=tasks&action=all">Show All Tasks</a></h5>
-<h5><a href="index.php?page=accounts&action=logout">Logout</a></h5>
 <?php
 
 print utility\htmlTable::genarateTableFromMultiArray($data);

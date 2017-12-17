@@ -17,6 +17,12 @@
 
 <body>
 
+<?php 
+
+include "header.php";
+
+?>
+
 
     <form action="index.php?page=tasks&action=save" method="post">
         

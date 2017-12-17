@@ -25,10 +25,12 @@ button {
       padding-left:12px;
 
 }
-  label {    
+
+label {    
     padding-top:1%;
     padding-left:26px;
     }
+
 h1 {
   padding-top:35px;
   padding-left:20px;
@@ -65,7 +67,7 @@ h1 {
         <div class="col-sm-2"><label><?php print("<b>Hello " . $_SESSION['name'] . " </b>"); ?></label></div>
         <div class="col-sm-8"></div>
         <div class="col-sm-1"><a href="index.php?page=accounts&action=getMyProfile" style="text-decoration:none;">My Profile</a></div>
-        <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> &nbsp;</div>
+        <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> </div>
       </div>
      
      

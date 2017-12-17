@@ -10,12 +10,14 @@
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
     
-    <style>
-    body {
+<style>
+
+  body {
     font-family: 'Open Sans', sans-serif;
   }
-
-    </style>
+  
+  
+</style>
 
 </head>
 
@@ -29,30 +31,24 @@
 
  ?>
 
-<br> 
- 	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
-	    <button type="submit" form="insertForm" value="Insert a Task">Insert a Task</button>
-	</form>
- 
-  <!--	<form action="index.php?page=tasks&action=insertTasks" method="post" id="myProfileForm">
-	    <button type="submit" form="myProfileForm" value="myProfile">My Profile</button>
-	</form>-->
- 
- <!--<h3><a href="index.php?page=accounts&action=all">My Profile</a></h3>-->
- <br>
-
-
-
-<!--<h5><a href="index.php?page=accounts&action=all">Show All Accounts</a></h5>
-<h5><a href="index.php?page=tasks&action=all">Show All Tasks</a></h5>-->
-
-
+<center><h3>Your Tasks</h3></center>
+<br>
 <?php
 
 print utility\htmlTable::genarateTableFromMultiArray($data);
 
  ?>
 
+<br>
+    <div class="row">
+      <div class="col-sm-5"></div> 
+      <div class="col-sm-7">
+       	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
+      	    <button type="submit" form="insertForm" value="Insert a Task" class="btn btn-info active" style="width:18%;">Insert a Task</button>
+      	</form>
+      </div>
+      <div class="col-sm-5"></div>
+    </div>
 <br><br>
 
 

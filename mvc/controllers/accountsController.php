@@ -99,7 +99,8 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
-        header("Location: index.php?page=accounts&action=all");
+        $_SESSION['name']=$_POST['fname'];
+        header("Location: index.php?page=tasks&action=goToProfile");
 
     }
 

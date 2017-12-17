@@ -25,7 +25,10 @@ button {
       padding-left:12px;
 
 }
-
+  label {    
+    padding-top:1%;
+    padding-left:26px;
+    }
 h1 {
   padding-top:35px;
   padding-left:20px;

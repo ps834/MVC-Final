@@ -14,10 +14,7 @@
     body {
     font-family: 'Open Sans', sans-serif;
   }
-  label {    
-    padding-top:1%;
-    padding-left:26px;
-    }
+
     </style>
 
 </head>

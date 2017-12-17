@@ -35,7 +35,7 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 ?>
 
-
+<!--
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
     First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
@@ -50,7 +50,7 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
     <button type="submit" form="form1" value="delete">Delete</button>
-</form> 
+</form> -->
 
 
 <script src="js/scripts.js"></script>

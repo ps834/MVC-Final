@@ -7,6 +7,9 @@
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
+    
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
@@ -15,15 +18,19 @@
     <![endif]-->
     
     
-     <style>
-  .modal-header, h4, .close {
-      background-color: #5cb85c;
+ <style>
+ 
+  .modal-header {
+      background-color: #59B3E1; 
+      // #5cb85c;
       color:white !important;
       font-size: 30px;
-      width:40%;
+      width:35%;
+      height:60px;
+      margin-top:60px;
   }
   .modal-footer {
-      background-color: #f9f9f9;
+      background-color: #59B3E1 ;
   }
   
 body {
@@ -34,7 +41,7 @@ body {
 button {
 
       width:85px; 
-      height:50px;
+      height:40px;
       padding-top:8px;
       padding-left:12px;
 
@@ -42,9 +49,15 @@ button {
 
 .div-within {
       
-      background-color:red;
-      width:40%;
-      height:400px;
+      background-color:#F8F5F5;
+      width:35%;
+      height:308px;
+}
+
+span {
+
+    padding-left:20px;
+
 }
   </style>
 </head>
@@ -52,7 +65,7 @@ button {
 <body>
 
 
-<h3><a href="index.php?page=accounts&action=register" style="text-decoration:none;">Sign up</a></h3>
+
 
 
 <form action="index.php?page=accounts&action=login" method="POST">
@@ -61,14 +74,19 @@ button {
     <div class="modal-header"> <h4><?php echo $data['site_name'];?></h4></div> 
     <div class="div-within">
         <br><br>
+        <span class="glyphicon glyphicon-user"></span>
         <label style="padding-right:126px;"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="email" required class="form-control" style="width:200px; height:40px;">
-        <br><br>
+        <br>
+        <span class="glyphicon glyphicon-lock"></span>
         <label style="padding-right:126px;"><b>Password</b></label>&nbsp;
         <input type="password" placeholder="Enter Password" name="password" required class="form-control" style="width:200px; height:40px;">
-        <br><br>
+        <br>
         <button type="submit" class="btn btn-info active" >Login</button>
+        <br><br>
+        <h6><a href="index.php?page=accounts&action=register" style="text-decoration:none;">Sign up</a></h6>
     <div>
+    <div class="modal-footer"></div>
     </div>
 
 
@@ -77,10 +95,6 @@ button {
 
 
  
-
- 
-
-
 
 
 <script src="js/scripts.js"></script>

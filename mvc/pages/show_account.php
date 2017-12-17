@@ -31,11 +31,11 @@ include "header.php";
   <!--    <form action="index.php?page=accounts&action=callEditProfile" id="editProfile">
       
           <button type="submit" value="editProfile" >Edit Profile</button>
-  
+   
       </form>-->
       <br><br>
       <a href="index.php?page=accounts&action=callEditProfile" style="text-decoration:none;margin-left:1150px;">Edit Profile</a>
-  <img src="images/Delete_Icon.png" alt="Delete" height="35" width="35">
+      &nbsp;&nbsp;<img src="images/Delete_Icon.png" alt="Delete" height="25" width="25">
       
       
 <br><br>

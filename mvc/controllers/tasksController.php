@@ -68,7 +68,10 @@ class tasksController extends http\controller
             $user = todos::findOne($_REQUEST['id']);
         }
 
-        session_start();
+                
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+        }
 
         
         $user->owneremail = $_POST['email'];
@@ -79,7 +82,7 @@ class tasksController extends http\controller
         $user->isdone = $_POST['isdone'];
         $user->userid = $_SESSION["userID"];
         $user->save();
-        self::goToProfile();
+        self::getTemplate('show_task', $user);
 
     }
 
@@ -116,7 +119,7 @@ class tasksController extends http\controller
         $record = todos::findOne($_REQUEST['id']);
         $record->body = $_REQUEST['body'];
         $record->save();
-        print_r($_POST);
+        //print_r($_POST);
 
     }
 
@@ -136,7 +139,7 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r($_POST);
+        self::goToProfile();
 
     }
 

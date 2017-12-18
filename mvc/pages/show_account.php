@@ -16,9 +16,11 @@
     
 <style>
   
- table {
-   align:center;
- }
+table, th, td {
+    border: 1px solid #F1ECEA;
+    text-align:center;
+    font-size:11pt;
+}
        
 </style>
 

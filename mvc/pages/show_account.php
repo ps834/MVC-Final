@@ -44,10 +44,7 @@ include "header.php";
 print utility\htmlTable::generateTableFromOneRecord($data);
 ?>
 
-    <div style="margin-left:40%;">
-     <!-- <form action="index.php?page=accounts&action=callEditProfile" id="editProfile">
-          <input type="submit" value="Edit Profile" form = "editProfile" class="btn btn-info active">
-      </form> -->
+    <div style="margin-left:40%;">     
       <a href="index.php?page=accounts&action=callEditProfile" class="btn btn-info active" style="width:12%;">Edit Profile</a>
     </div>
     <div style="margin-left:50%;margin-top:-34px;">

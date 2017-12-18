@@ -74,14 +74,7 @@ include "header.php";
       </div><br>   
   </div><br> 
   
-  
-  
-      <!--  Owner ID: <input type="text" name="ownerid" value=""><br>
-        Owner Email: <input type="text" name="email" value=""><br>
-        Create Date: <input type="text" name="createddate" value=""><br>
-        Due Date: <input type="text" name="duedate" value=""><br>
-        Message: <input type="text" name="message" value=""><br>
-        Status: <input type="text" name="isdone" value=""><br>-->
+
 
         <center><input type="submit" value="Insert" class="btn btn-info active" style="width:10%;"></center>
 </form>

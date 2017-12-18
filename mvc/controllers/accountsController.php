@@ -70,7 +70,6 @@ class accountsController extends http\controller
         $user->gender = $_POST['gender'];
         $user->save();
         $_SESSION['name']=$_POST['fname'];
-        //header("Location: index.php?page=tasks&action=goToProfile");
         self::getMyProfile();
     }
 
@@ -135,7 +134,6 @@ class accountsController extends http\controller
             session_start();
         }
         $record = accounts::findOne($_SESSION["userID"]);
-       // print_r($record);
         self::getTemplate('show_account', $record);
       
     }

@@ -66,8 +66,6 @@ h1 {
         <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> </div>
       </div>
      
-     
-     
       <?php } }?>
       
       

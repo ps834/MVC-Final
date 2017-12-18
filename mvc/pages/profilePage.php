@@ -23,10 +23,13 @@ table, th, td {
 
 .errorStyle {
 
-    font-size:9pt;
-    margin-top:2%;
-    margin-left:-3%;
+      width:400px;
+      margin-left:34%;
+      height:6%;
+     padding-top:2px;
+
 }
+
   
 </style>
 
@@ -36,30 +39,48 @@ table, th, td {
 
 <?php
 
-
   include "header.php";
  ?>
 
 <center><h3>Your Tasks</h3></center>
-<br>
+
+<?php if($_SESSION['message']!= " "){  ?>
+<div class="alert alert-success alert-dismissable errorStyle">
+    
+    <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
+            <a href="index.php?page=tasks&action=goToProfile" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
+</div>
+<?php } 
+
+$_SESSION['message'] = " " ;
+?>
+
+<?php 
+
+if(strpos($_SESSION['message'],'No Tasks')){  ?>
+
+    <center><label id="error" name="error"><?php echo $_SESSION['message']; ?></label></center>
+    
+<?php 
+
+}
+$_SESSION['message'] = " " ;
+ ?>
+
+
+
 
 
 
 <?php
 if (!empty($data)) {
-         $error = " " ;
          print utility\htmlTable::genarateTableFromMultiArray($data);
-        }else{
-        
-            $error = "No Tasks to display";
-        }
+      }
+?>
 
 
- ?>
 
-<div>
-    <center><label id="error" name="error" class="errorStyle" ><?php echo $error; ?></label></center>
-</div>
+
 <br>
 <div>
    <center>

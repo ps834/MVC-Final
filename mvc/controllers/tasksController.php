@@ -32,8 +32,7 @@ class tasksController extends http\controller
 
     }
     
-    
-    //this is used to save the update form data
+
     public static function save() {
 
         $user = new todo();
@@ -45,11 +44,9 @@ class tasksController extends http\controller
             $taskStatus = 'update';
         }
 
-                
         if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
-
         
         $user->owneremail = $_POST['email'];
         $user->ownerid = $_POST['ownerid'];
@@ -61,8 +58,10 @@ class tasksController extends http\controller
         $user->save();
         
         if($taskStatus == 'update'){
+          self::setSuccessMessage("updated",$user->ownerid);
           self::getTemplate('show_task', $user);
         }else{
+           self::setSuccessMessage("inserted",$user->ownerid);
            self::goToProfile();
         }
 
@@ -76,16 +75,10 @@ class tasksController extends http\controller
         
         
         $tasks = todos::findTasks($_SESSION["userID"]);
-        
-       
-
-    /*  if (empty($tasks)) {
-       
-            echo "No Tasks found";
-        }else{*/
-         self::getTemplate('profilePage', $tasks);
-       // }
-
+        if(empty($tasks)){
+          $_SESSION['message'] = "No Tasks to display";
+        }
+        self::getTemplate('profilePage', $tasks);
     }
 
     public static function insertTasks(){
@@ -93,15 +86,11 @@ class tasksController extends http\controller
         self::getTemplate('insertTask');
     }
 
-    public static function store()
-    {
-
-
+    public static function store(){
+    
         $record = todos::findOne($_REQUEST['id']);
         $record->body = $_REQUEST['body'];
         $record->save();
-        //print_r($_POST);
-
     }
 
  
@@ -112,7 +101,13 @@ class tasksController extends http\controller
         self::goToProfile();
 
     }
-
+  
+    public static function setSuccessMessage($task,$id){
+           if(session_status() == PHP_SESSION_NONE){
+            session_start();
+          } 
+          $_SESSION['message'] =  " Task " . $task . " successfully for Owner ID " . $id;
+    }
 
 
 }

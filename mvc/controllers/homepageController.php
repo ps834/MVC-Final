@@ -17,6 +17,7 @@ class homepageController extends http\controller
 
         $templateData['site_name'] = 'MVC Home';
         $templateData['error'] = " ";
+        $_SESSION['message'] = " ";
         self::getTemplate('homepage', $templateData);
     }
 

@@ -58,12 +58,14 @@ span {
     padding-left:20px;
 
 }
-
 .errorStyle {
 
-    font-size:9pt;
-    color:red;
-    margin-top:2%;
+      width:419px;
+      margin-left:470px;
+      height:5%;
+      padding-top:4px;
+      margin-top:2%;
+
 }
 
   </style>
@@ -71,9 +73,24 @@ span {
 
 <body>
 
+<?php 
+
+$error = $data['error'];
+
+if(strpos($error, 'Thank') !== false) { ?>
+
+<div class="alert alert-success alert-dismissable errorStyle">
+ <center><label id="error" name="error">
+            <?php echo $data['error']; ?><a href="index.php" class="close" data-dismiss="alert" aria-label="close">x</a></label><center>  
+</div>
 
 
-<center><label id="error" name="error" class="errorStyle"><?php echo $data['error']; ?></label><center>
+<?php }else if($error!= " "){  ?>
+<div class="alert alert-danger alert-dismissable errorStyle">
+ <center><label id="error" name="error">
+            <?php echo $data['error']; ?><a href="index.php" class="close" data-dismiss="alert" aria-label="close">x</a></label><center>  
+</div>
+<?php } ?>
 
 
 <form action="index.php?page=accounts&action=login" method="POST">

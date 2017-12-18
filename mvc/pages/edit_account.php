@@ -60,12 +60,12 @@ include "header.php";
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Email: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->email; ?>" required></div>
+            <input type="email" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->email; ?>" required></div>
       </div><br>    
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Phone: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="phone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->phone; ?>" required></div>
+            <input type="number" name="phone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->phone; ?>" maxlength="10" required></div>
       </div><br>      
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Birthday: </label></div>

@@ -45,12 +45,12 @@ include "header.php";
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner ID: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="ownerid" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="number" name="ownerid" required class="form-control" style="width:50%;float:left;"></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner Email:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="email" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="email" name="email" required class="form-control" style="width:50%;float:left;"></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Create Date:</label></div>
@@ -70,7 +70,7 @@ include "header.php";
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Status: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="isdone" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="number" name="isdone" required class="form-control" style="width:50%;float:left;"></div>
       </div><br>   
   </div><br> 
   

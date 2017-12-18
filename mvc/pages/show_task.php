@@ -66,12 +66,12 @@ print utility\htmlTable::generateTableFromOneRecord($data);
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner ID: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="ownerid" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->ownerid; ?>" required></div>
+              <input type="number" name="ownerid" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->ownerid; ?>" required></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner Email:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->owneremail; ?>" required></div>
+              <input type="email" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->owneremail; ?>" required></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Create Date:</label></div>
@@ -92,12 +92,12 @@ print utility\htmlTable::generateTableFromOneRecord($data);
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Status: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="isdone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->isdone; ?>" required></div>
+              <input type="number" name="isdone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->isdone; ?>" required></div>
       </div><br>   
   </div><br>    
 
 
-    <div style="margin-left:40%;"><input type="submit" value="Update Task" class="btn btn-info active" style="width:15%;"></div>
+    <div style="margin-left:40%;"><input type="submit" value="Update Task" name= "updateTask" class="btn btn-info active" style="width:15%;"></div>
 </form>
 
 <div style="margin-left:50%;margin-top:-48px;">
@@ -107,10 +107,6 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 </form>
 </div>
 <br>
-
-
-
-
 
 
 <script src="js/scripts.js"></script>

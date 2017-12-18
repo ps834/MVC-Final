@@ -29,6 +29,7 @@ class routes{
         $routes[] = routeFactory::create('GET','goToProfile','tasks','tasksController','goToProfile');
         $routes[] = routeFactory::create('GET','getMyProfile','accounts','accountsController','getMyProfile');
         $routes[] = routeFactory::create('GET','callEditProfile','accounts','accountsController','callEditProfile');
+        $routes[] = routeFactory::create('GET','confirmDelete','accounts','accountsController','confirmDelete');
         return $routes;
     }
 

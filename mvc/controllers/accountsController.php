@@ -69,7 +69,11 @@ class accountsController extends http\controller
         $user->birthday = $_POST['birthday'];
         $user->gender = $_POST['gender'];
         $user->save();
+        if(session_status() == PHP_SESSION_NONE){
+          session_start();
+        }
         $_SESSION['name']=$_POST['fname'];
+        self::setSuccessMessage("updated",$user->fname);
         self::getMyProfile();
     }
 
@@ -150,5 +154,17 @@ class accountsController extends http\controller
     
     
     }
-
+    
+    
+    public static function setSuccessMessage($task,$id){
+           if(session_status() == PHP_SESSION_NONE){
+            session_start();
+          } 
+          
+          $_SESSION['message'] =  $id . ", your profile has been " . $task . " successfully";
+    }
+    
+    public static function confirmDelete(){
+    
+    }
 }

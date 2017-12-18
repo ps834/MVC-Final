@@ -22,7 +22,6 @@
  
   .modal-header {
       background-color: #59B3E1; 
-      // #5cb85c;
       color:white !important;
       font-size: 30px;
       width:35%;
@@ -59,20 +58,28 @@ span {
     padding-left:20px;
 
 }
+
+.errorStyle {
+
+    font-size:9pt;
+    color:red;
+    margin-top:2%;
+}
+
   </style>
 </head>
 
 <body>
 
 
-<?php if($_REQUEST['id']==1){ ?>
-<label id="error" name="error"><?php print($error); ?></label>
 
-<?php } ?>
+<center><label id="error" name="error" class="errorStyle"><?php echo $data['error']; ?></label><center>
+
+
 <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container" align="center">
-    <div class="modal-header"> <h4><?php echo $data['site_name'];?></h4></div> 
+    <div class="modal-header"> <h4>MVC Home</h4></div> 
     <div class="div-within">
         <br><br>
         <span class="glyphicon glyphicon-user"></span>

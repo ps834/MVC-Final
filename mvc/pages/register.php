@@ -36,7 +36,7 @@ label {
 include "header.php";
 ?>
 
-<div class="container" align = "center" style="margin-top: 5%;">
+<div class="container" align = "center" style="margin-top: 2%;">
 
 <div>
 <form action="index.php?page=accounts&action=register" method="post">

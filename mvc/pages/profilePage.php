@@ -31,15 +31,21 @@ table, th, td {
 
 
   include "header.php";
-// print("Hello $data->owneremail");
-
  ?>
 
 <center><h3>Your Tasks</h3></center>
 <br>
-<?php
 
-print utility\htmlTable::genarateTableFromMultiArray($data);
+
+
+<?php
+if (!empty($tasks)) {
+       
+         print utility\htmlTable::genarateTableFromMultiArray($data);
+        }else{
+        
+        }
+
 
  ?>
 

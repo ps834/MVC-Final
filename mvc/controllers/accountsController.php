@@ -1,19 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kwilliams
- * Date: 11/27/17
- * Time: 5:32 PM
- */
 
-
-//each page extends controller and the index.php?page=tasks causes the controller to be called
 class accountsController extends http\controller
 {
-
-    //each method in the controller is named an action.
-    //to call the show function the url is index.php?page=task&action=show
-
 
     public static function show()
     {
@@ -21,7 +9,6 @@ class accountsController extends http\controller
         self::getTemplate('show_account', $record);
     }
 
-    //to call the show function the url is index.php?page=accounts&action=all
 
     public static function all()
     {
@@ -30,20 +17,13 @@ class accountsController extends http\controller
         self::getTemplate('all_accounts', $records);
 
     }
-    //to call the show function the url is called with a post to: index.php?page=task&action=create
-    //this is a function to create new tasks
 
-    //you should check the notes on the project posted in moodle for how to use active record here
-
-    //this is to register an account i.e. insert a new account
     public static function register()
     {
-        //https://www.sitepoint.com/why-you-should-use-bcrypt-to-hash-stored-passwords/
-        //USE THE ABOVE TO SEE HOW TO USE Bcrypt
+
         self::getTemplate('register');
     }
 
-    //this is the function to save the user the new user for registration
     public static function store()
 
     {
@@ -58,25 +38,15 @@ class accountsController extends http\controller
             $user->phone = $_POST['phone'];
             $user->birthday = $_POST['birthday'];
             $user->gender = $_POST['gender'];
-            //$user->password = $_POST['password'];
-            //this creates the password
-            //this is a mistake you can fix...
-            //Turn the set password function into a static method on a utility class.
             $user->password = account::setPassword($_POST['password']);
             $user->save();
-
-            //you may want to send the person to a
-            // login page or create a session and log them in
-            // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=homepage&action=show");
+            $templateData['error'] = 'Thank you for registering. Please login to continue.';
+            self::getTemplate('homepage', $templateData);
 
         } else {
-            //You can make a template for errors called error.php
-            // and load the template here with the error you want to show.
-           // echo 'already registered';
-            $error = 'already registered';
-            self::getTemplate('error', $error);
-
+        
+            $templateData['error'] = 'User already registered';
+            self::getTemplate('homepage', $templateData);
         }
 
     }
@@ -125,24 +95,29 @@ class accountsController extends http\controller
 
 
         if ($user == FALSE) {
-            echo 'user not found';
+        
+            $templateData['error'] = 'User not found';
+            self::getTemplate('homepage', $templateData);
+            
         } else {
 
             if($user->checkPassword($_POST['password']) == TRUE) {
             
-                
                 session_start();
+
                 $_SESSION["userID"] = $user->id;
                 $_SESSION["name"] = $user->fname;
-                $_SESSION["error"] = false;
                 
+       
                header("Location: index.php?page=tasks&action=goToProfile");
 
+ /*             $tasks = todos::findTasks($_SESSION["userID"]);
+              self::getTemplate('profilePage', $tasks);*/
 
             } else {
-            
-                $error = "Invalid Password";
-                 header("Location: index.php?page=homepage&action=show&id=1");
+               
+            $templateData['error'] = 'Invalid Password';
+            self::getTemplate('homepage', $templateData);
             }
 
         }

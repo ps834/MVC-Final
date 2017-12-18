@@ -52,19 +52,15 @@ h1 {
       if(session_status() == PHP_SESSION_NONE){
             session_start();
         }
-        
+        $userName='';
+        if(isset($_SESSION['name']) && !empty($_SESSION['name'])){
+            $userName="Hello ". $_SESSION['name'];
+        }
 
 ?>
-  
-      <!--<form action="index.php?page=accounts&action=logout" id="logout">
-      
-          <button type="submit" form="logout" value="logout" >Logout</button>
-  
-      </form>-->
-      
 
       <div class="row">
-        <div class="col-sm-2"><label><?php print("<b>Hello " . $_SESSION['name'] . " </b>"); ?></label></div>
+        <div class="col-sm-2"><label><?php print("<b>" . $userName . "</b>"); ?></label></div>
         <div class="col-sm-8"></div>
         <div class="col-sm-1"><a href="index.php?page=accounts&action=getMyProfile" style="text-decoration:none;">My Profile</a></div>
         <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> </div>
@@ -73,6 +69,9 @@ h1 {
      
      
       <?php }?>
+      
+      
+      
 </div>
 
 </body>

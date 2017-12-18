@@ -49,37 +49,44 @@ include "header.php";
       <br><br>
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label>First name: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="text" name="fname" required class="form-control" style="width:50%;float:left;" required>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="fname" required class="form-control" style="width:50%;float:left;"  placeholder="Enter First Name">
           </div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label>Last name: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="text" name="lname" required class="form-control" style="width:50%;float:left;" required>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="lname" required class="form-control" style="width:50%;float:left;" placeholder="Enter Last Name">
           </div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label>Email: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="email" name="email" required class="form-control" style="width:50%;float:left;" required>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="email" name="email" required class="form-control" style="width:50%;float:left;" placeholder="Enter Email ID">
           </div>
       </div><br>    
        <div class="row"><div class="col-sm-3"></div>
-          <div class="col-sm-2" style="padding-right:0px;"><label>Phone: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="number" name="phone" maxlength="10" required class="form-control" style="width:50%;float:left;" required>
+       <div class="col-sm-2" style="padding-right:0px;"><label>Phone: </label></div>
+       <div class="col-sm-5" style="padding-left:0px;">
+         <input type="number" name="phone" maxlength="10" required class="form-control" style="width:50%;float:left;" placeholder="Enter Phone number">
           </div>
       </div><br>      
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label>Birthday: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="text" name="birthday" required class="form-control" style="width:50%;float:left;" required>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="birthday" class="form-control" style="width:50%;float:left;" required placeholder="Enter date in (yyyy-mm-dd)">
           </div>
       </div><br>   
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label>Gender: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="text" name="gender" required class="form-control" style="width:50%;float:left;" required>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="gender" class="form-control" style="width:50%;float:left;" required placeholder="Enter Gender">
           </div>
       </div><br>   
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label>Password: </label></div>
-          <div class="col-sm-5" style="padding-left:0px;"><input type="password" name="password" required class="form-control" style="width:50%;float:left;" required></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="password" name="password" class="form-control" style="width:50%;float:left;" required placeholder="Enter Password"></div>
       </div><br>    
     
     <br>

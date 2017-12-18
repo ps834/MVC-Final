@@ -45,32 +45,32 @@ include "header.php";
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner ID: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="number" name="ownerid" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="number" name="ownerid" required class="form-control" style="width:50%;float:left;" placeholder="Enter Owner ID"></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner Email:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="email" name="email" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="email" name="email" required class="form-control" style="width:50%;float:left;" placeholder="Enter Email ID"></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Create Date:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="createddate" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="text" name="createddate" required class="form-control" style="width:50%;float:left;" placeholder="Enter Date in (yyyy-mm-dd)"></div>
       </div><br>    
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Due Date: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="duedate" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="text" name="duedate" required class="form-control" style="width:50%;float:left;" placeholder="Enter Date in (yyyy-mm-dd)"></div>
       </div><br>      
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Message:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="message" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="text" name="message" required class="form-control" style="width:50%;float:left;" placeholder="Add Message"></div>
       </div><br>   
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Status: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="number" name="isdone" required class="form-control" style="width:50%;float:left;"></div>
+              <input type="number" name="isdone" required class="form-control" style="width:50%;float:left;"  placeholder="0:Incomplete, 1:Complete"></div>
       </div><br>   
   </div><br> 
   

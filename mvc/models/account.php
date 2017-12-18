@@ -26,7 +26,7 @@ final class account extends \database\model
 
         //I am temporarily putting a findall here but you should add a method to todos that takes the USER ID and returns their tasks.
         $records = todos::findAll();
-        print_r($records);
+        
         return $records;
     }
     //add a method to compare the passwords this is where bcrypt should be done and it should return TRUE / FALSE for login

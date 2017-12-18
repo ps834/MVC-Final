@@ -37,7 +37,9 @@ include "header.php";
     <form action="index.php?page=tasks&action=save" method="post">
         
         
-            <div class="row">
+      <center><h3>Enter Task details</h3></center>
+        
+      <div class="row">
       </div>
       <br>
       <div class="row"><div class="col-sm-3"></div>
@@ -81,7 +83,7 @@ include "header.php";
         Message: <input type="text" name="message" value=""><br>
         Status: <input type="text" name="isdone" value=""><br>-->
 
-        <center><input type="submit" value="Insert"></center>
+        <center><input type="submit" value="Insert" class="btn btn-info active" style="width:10%;"></center>
 </form>
 
 

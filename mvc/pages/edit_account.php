@@ -13,45 +13,74 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
+    
+<style>
+  
+    table, th, td {
+    border: 1px solid #F1ECEA;
+    text-align:center;
+    font-size:11pt;
+}
+    .divLbl{
+    
+      float:right;
+      padding-right:25px;
+      margin-top:2%;
+    }
+       
+</style>
+
 </head>
 
 <body>
 
 
-<!--<h1>Email: <?php echo $data->email; ?></h1>
-<h1>First Name: <?php echo $data->fname; ?></h1>
-<h1>Last Name: <?php echo $data->lname; ?></h1>-->
-
 <?php
 
 include "header.php";
-
-
-//this is how you print something  $data contains the record that was selected on the table.
-
-print "<br><br>";
-//print utility\htmlTable::generateTableFromOneRecord($data);
-
-
 ?>
 
 
+<center><h3>Edit Profile</h3></center>
+<br>
+
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br>
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br>
-    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
-    <input type="submit" value="Update Profile">
+   <div class="row">
+      <div class="row"><div class="col-sm-3"></div>
+          <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">First name: </label></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="fname" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->fname; ?>"></div>
+      </div><br>
+       <div class="row"><div class="col-sm-3"></div>
+          <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Last name: </label></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="lname" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->lname; ?>"></div>
+      </div><br>
+       <div class="row"><div class="col-sm-3"></div>
+          <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Email: </label></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->email; ?>"></div>
+      </div><br>    
+       <div class="row"><div class="col-sm-3"></div>
+          <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Phone: </label></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="phone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->phone; ?>"></div>
+      </div><br>      
+      <div class="row"><div class="col-sm-3"></div>
+          <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Birthday: </label></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="birthday" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->birthday; ?>"></div>
+      </div><br>   
+      <div class="row"><div class="col-sm-3"></div>
+          <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Gender: </label></div>
+          <div class="col-sm-5" style="padding-left:0px;">
+            <input type="text" name="gender" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->gender; ?>"></div>
+      </div><br>    
+      
+      <center><input type="submit"  class="btn btn-info active"  value="Save"></center>
 </form>
 
-
-
-<form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
-</form>
 
 
 

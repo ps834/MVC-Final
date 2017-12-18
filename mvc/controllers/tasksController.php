@@ -62,10 +62,12 @@ class tasksController extends http\controller
     public static function save() {
 
         $user = new todo();
+        $taskStatus = 'insert';
 
         if(isset($_REQUEST['id'])==1){
 
             $user = todos::findOne($_REQUEST['id']);
+            $taskStatus = 'update';
         }
 
                 
@@ -82,7 +84,12 @@ class tasksController extends http\controller
         $user->isdone = $_POST['isdone'];
         $user->userid = $_SESSION["userID"];
         $user->save();
-        self::getTemplate('show_task', $user);
+        
+        if($taskStatus == 'update'){
+          self::getTemplate('show_task', $user);
+        }else{
+           self::goToProfile();
+        }
 
     }
 
@@ -110,8 +117,6 @@ class tasksController extends http\controller
         self::getTemplate('insertTask');
     }
 
-
-    //this would be for the post for sending the task edit form
     public static function store()
     {
 
@@ -123,18 +128,7 @@ class tasksController extends http\controller
 
     }
 
-  /*  public static function save() {
-        session_start();
-        $task = new todo();
-
-        $task->body = $_POST['body'];
-        $task->ownerid = $_SESSION['userID'];
-        $task->save();
-
-    }*/
-
-    //this is the delete function.  You actually return the edit form and then there should be 2 forms on that.
-    //One form is the todo and the other is just for the delete button
+ 
     public static function delete()
     {
         $record = todos::findOne($_REQUEST['id']);

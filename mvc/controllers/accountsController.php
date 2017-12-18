@@ -88,7 +88,7 @@ class accountsController extends http\controller
         self::getTemplate('edit_account', $record);
 
     }
-//this is used to save the update form data
+
     public static function save() {
     
         $user = accounts::findOne($_REQUEST['id']);
@@ -100,8 +100,8 @@ class accountsController extends http\controller
         $user->gender = $_POST['gender'];
         $user->save();
         $_SESSION['name']=$_POST['fname'];
-        header("Location: index.php?page=tasks&action=goToProfile");
-
+        //header("Location: index.php?page=tasks&action=goToProfile");
+        self::getMyProfile();
     }
 
     public static function delete() {
@@ -177,6 +177,7 @@ class accountsController extends http\controller
       if(session_status() == PHP_SESSION_NONE){
               session_start();
       }
+      
       $record = accounts::findOne($_SESSION["userID"]);
       self::getTemplate('edit_account', $record);
     

@@ -45,13 +45,14 @@ print utility\htmlTable::generateTableFromOneRecord($data);
 ?>
 
     <div style="margin-left:40%;">
-      <form action="index.php?page=accounts&action=callEditProfile" id="editProfile">
-          <button type="submit" value="editProfile" class="btn btn-info active" style="width:12%;">Edit Profile</button>
-      </form>
+     <!-- <form action="index.php?page=accounts&action=callEditProfile" id="editProfile">
+          <input type="submit" value="Edit Profile" form = "editProfile" class="btn btn-info active">
+      </form> -->
+      <a href="index.php?page=accounts&action=callEditProfile" class="btn btn-info active" style="width:12%;">Edit Profile</a>
     </div>
-    <div style="margin-left:50%;margin-top:-4%;">
+    <div style="margin-left:50%;margin-top:-34px;">
      <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-          <button type="submit" form="form1" value="delete" class="btn btn-info active" >Delete</button>
+          <button type="submit" form="form1" value="delete" class="btn btn-info active" style="height:35px;width:94px;">Delete</button>
       </form>
     </div>
 

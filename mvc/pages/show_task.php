@@ -44,7 +44,7 @@
 
 
 <?php
-//this is how you print something  $data contains the record that was selected on the table.
+ 
 include "header.php";
 
 ?>
@@ -66,32 +66,33 @@ print utility\htmlTable::generateTableFromOneRecord($data);
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner ID: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="ownerid" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->ownerid; ?>"></div>
+              <input type="text" name="ownerid" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->ownerid; ?>" required></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Owner Email:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->owneremail; ?>"></div>
+              <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->owneremail; ?>" required></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Create Date:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="createddate" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->createddate; ?>"></div>
+              <input type="text" name="createddate" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->createddate; ?>"required>
+          </div>
       </div><br>    
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Due Date: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="duedate" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->duedate; ?>"></div>
+              <input type="text" name="duedate" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->duedate; ?>" required></div>
       </div><br>      
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Message:</label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="message" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->message; ?>"></div>
+              <input type="text" name="message" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->message; ?>" required></div>
       </div><br>   
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Status: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-              <input type="text" name="isdone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->isdone; ?>"></div>
+              <input type="text" name="isdone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->isdone; ?>" required></div>
       </div><br>   
   </div><br>    
 

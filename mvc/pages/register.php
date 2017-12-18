@@ -75,13 +75,6 @@ include "header.php";
           <div class="col-sm-2" style="padding-right:0px;"><label>Password: </label></div>
           <div class="col-sm-5" style="padding-left:0px;"><input type="password" name="password" required class="form-control" style="width:50%;float:left;"></div>
       </div><br>    
-       
-   <!-- Last name: <input type="text" name="lname"><br>
-    Email: <input type="text" name="email"><br>
-    Phone: <input type="text" name="phone"><br>
-    Birthday: <input type="text" name="birthday"><br>
-    Gender: <input type="text" name="gender"><br>
-    Password: <input type="password" name="password">-->
     
     <br>
     <input type="submit" value="Submit form" class="btn btn-info active" >

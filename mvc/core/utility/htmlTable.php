@@ -16,22 +16,29 @@ class htmlTable
         $fieldHeadings = array_keys($fieldHeadings);
         //this gets the page being viewed so that the table routes requests to the correct controller
         $referingPage = $_REQUEST['page'];
+
         foreach ($fieldHeadings as $heading) {
+        if($heading!="password" && $heading!="userid"){
             $tableGen .= '<th style="background-color:#F1ECEA;">' . $heading . '</th>';
+            }
         }
         $tableGen .= '</tr>';
+        
+        
         foreach ($array as $record) {
             $tableGen .= '<tr>';
             foreach ($record as $key => $value) {
                 if ($key == 'id') {
                     $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '" style="text-decoration:none;">View</a></td>';
                 } else {
+                 if($key!="password" && $key!="userid"){
                     $tableGen .= '<td>' . $value . '</td>';
+                 }
                 }
             }
             $tableGen .= '</tr>';
         }
-
+ 
         $tableGen .= '</table>';
 
         return $tableGen;
@@ -43,12 +50,16 @@ class htmlTable
 
         $tableGen .= '<tr>';
         foreach ($innerArray as $innerRow => $value) {
+         if($innerRow!="password" && $innerRow!="userid"){
             $tableGen .= '<th style="background-color:#F1ECEA;">' . $innerRow . '</th>';
+            }
         }
         $tableGen .= '</tr>';
 
-        foreach ($innerArray as $value) {
+        foreach ($innerArray as $innerRow => $value) {
+        if($innerRow!="password" && $innerRow!="userid"){
             $tableGen .= '<td>' . $value . '</td>';
+            }
         }
 
         $tableGen .= '</tr></table><hr>';

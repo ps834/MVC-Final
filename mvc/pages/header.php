@@ -55,7 +55,7 @@ h1 {
         $userName='';
         if(isset($_SESSION['name']) && !empty($_SESSION['name'])){
             $userName="Hello ". $_SESSION['name'];
-        }
+       
 
 ?>
 
@@ -68,7 +68,7 @@ h1 {
      
      
      
-      <?php }?>
+      <?php } }?>
       
       
       

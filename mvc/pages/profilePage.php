@@ -20,6 +20,13 @@ table, th, td {
     text-align:center;
     font-size:11pt;
 }
+
+.errorStyle {
+
+    font-size:9pt;
+    margin-top:2%;
+    margin-left:-3%;
+}
   
 </style>
 
@@ -39,25 +46,27 @@ table, th, td {
 
 
 <?php
-if (!empty($tasks)) {
-       
+if (!empty($data)) {
+         $error = " " ;
          print utility\htmlTable::genarateTableFromMultiArray($data);
         }else{
         
+            $error = "No Tasks to display";
         }
 
 
  ?>
 
+<div>
+    <center><label id="error" name="error" class="errorStyle" ><?php echo $error; ?></label></center>
+</div>
 <br>
-    <div class="row">
-      <div class="col-sm-5"></div> 
-      <div class="col-sm-7">
+<div>
+   <center>
        	<form action="index.php?page=tasks&action=insertTasks" method="post" id="insertForm">
-      	    <button type="submit" form="insertForm" value="Insert a Task" class="btn btn-info active" style="width:18%;">Insert a Task</button>
+      	    <button type="submit" form="insertForm" value="Insert a Task" class="btn btn-info active" style="width:10%;">Insert a Task</button>
       	</form>
-      </div>
-      <div class="col-sm-5"></div>
+   <center>
     </div>
 <br><br>
 

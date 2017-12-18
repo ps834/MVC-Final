@@ -50,32 +50,32 @@ include "header.php";
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">First name: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="fname" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->fname; ?>"></div>
+            <input type="text" name="fname" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->fname; ?>" required></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Last name: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="lname" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->lname; ?>"></div>
+            <input type="text" name="lname" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->lname; ?>" required></div>
       </div><br>
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Email: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->email; ?>"></div>
+            <input type="text" name="email" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->email; ?>" required></div>
       </div><br>    
        <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Phone: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="phone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->phone; ?>"></div>
+            <input type="text" name="phone" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->phone; ?>" required></div>
       </div><br>      
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Birthday: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="birthday" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->birthday; ?>"></div>
+            <input type="text" name="birthday" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->birthday; ?>" required></div>
       </div><br>   
       <div class="row"><div class="col-sm-3"></div>
           <div class="col-sm-2" style="padding-right:0px;"><label class="divLbl">Gender: </label></div>
           <div class="col-sm-5" style="padding-left:0px;">
-            <input type="text" name="gender" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->gender; ?>"></div>
+            <input type="text" name="gender" required class="form-control" style="width:50%;float:left;" value="<?php echo $data->gender; ?>" required></div>
       </div><br>    
       
       <center><input type="submit"  class="btn btn-info active"  value="Save"></center>

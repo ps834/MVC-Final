@@ -130,19 +130,19 @@ class accountsController extends http\controller
 
             if($user->checkPassword($_POST['password']) == TRUE) {
             
+                
                 session_start();
-
                 $_SESSION["userID"] = $user->id;
                 $_SESSION["name"] = $user->fname;
+                $_SESSION["error"] = false;
                 
-       
                header("Location: index.php?page=tasks&action=goToProfile");
 
- /*             $tasks = todos::findTasks($_SESSION["userID"]);
-              self::getTemplate('profilePage', $tasks);*/
 
             } else {
-                echo 'password does not match';
+            
+                $error = "Invalid Password";
+                 header("Location: index.php?page=homepage&action=show&id=1");
             }
 
         }

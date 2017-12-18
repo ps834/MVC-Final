@@ -65,9 +65,10 @@ span {
 <body>
 
 
+<?php if($_REQUEST['id']==1){ ?>
+<label id="error" name="error"><?php print($error); ?></label>
 
-
-
+<?php } ?>
 <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container" align="center">

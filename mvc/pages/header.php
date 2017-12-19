@@ -6,7 +6,7 @@
 .divStyle {
     background-color: lightblue;
     width:100%;
-    height:18%;
+    height:21%;
     margin-top:-20px;
 
    
@@ -46,7 +46,7 @@ h1 {
     
   <h1>MVC Home</h1>  
   
-  <?php  if($_SESSION["page"] != "register"){ 
+  <?php  if($_GET["action"] != "register"){ 
       
       
       if(session_status() == PHP_SESSION_NONE){
@@ -57,7 +57,7 @@ h1 {
             $userName="Hello ". $_SESSION['name'];
        
 
-?>
+}?>
 
       <div class="row">
         <div class="col-sm-2"><label><?php print("<b>" . $userName . "</b>"); ?></label></div>
@@ -66,7 +66,7 @@ h1 {
         <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> </div>
       </div>
      
-      <?php } }?>
+      <?php } ?>
       
       
       

@@ -78,7 +78,7 @@ if (!empty($data)) {
 <div class="alert alert-success alert-dismissable errorStyle">
     
     <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
+            <a href="" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
 </div>
 <?php } 
 

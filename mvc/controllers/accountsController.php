@@ -20,7 +20,6 @@ class accountsController extends http\controller
 
     public static function register()
     {
-
         self::getTemplate('register');
     }
 
@@ -73,16 +72,19 @@ class accountsController extends http\controller
           session_start();
         }
         $_SESSION['name']=$_POST['fname'];
-        self::setSuccessMessage("updated",$user->fname);
+        self::setSuccessMessage(", your account has been updated successfully",$user->fname);
         self::getMyProfile();
     }
 
     public static function delete() {
 
-        $record = accounts::findOne($_REQUEST['id']);
+         if(session_status() == PHP_SESSION_NONE){
+            session_start();
+          }         
+        $record = accounts::findOne($_SESSION['userID']);
         $record->delete();
-        
-        header("Location: index.php");
+        $templateData['error'] = "Your account has been deleted successfully";
+        self::getTemplate('homepage',$templateData);
     }
 
  
@@ -107,7 +109,7 @@ class accountsController extends http\controller
                 $_SESSION["userID"] = $user->id;
                 $_SESSION["name"] = $user->fname;
                 
-       
+           
                header("Location: index.php?page=tasks&action=goToProfile");
 
 
@@ -161,10 +163,13 @@ class accountsController extends http\controller
             session_start();
           } 
           
-          $_SESSION['message'] =  $id . ", your profile has been " . $task . " successfully";
+          $_SESSION['message'] =  $id . $task  ;
     }
     
     public static function confirmDelete(){
-    
+      
+      self::setSuccessMessage("Your profile will be deleted. Do you want to continue?", " " );
+      self::getMyProfile();  
+      
     }
 }

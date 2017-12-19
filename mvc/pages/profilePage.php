@@ -42,9 +42,9 @@ table, th, td {
   include "header.php";
  ?>
 
-<center><h3>Your Tasks</h3></center>
+<center><h3>Your Tasks</h3></center>  
 
-<?php if($_SESSION['message']!= " "){  ?>
+<?php if($_SESSION['message']!= " " || strpos($_SESSION['message'],'No Tasks')){  ?>
 <div class="alert alert-success alert-dismissable errorStyle">
     
     <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
@@ -54,22 +54,6 @@ table, th, td {
 
 $_SESSION['message'] = " " ;
 ?>
-
-<?php 
-
-if(strpos($_SESSION['message'],'No Tasks')){  ?>
-
-    <center><label id="error" name="error"><?php echo $_SESSION['message']; ?></label></center>
-    
-<?php 
-
-}
-$_SESSION['message'] = " " ;
- ?>
-
-
-
-
 
 
 <?php

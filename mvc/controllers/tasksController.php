@@ -73,7 +73,6 @@ class tasksController extends http\controller
             session_start();
         }
         
-        
         $tasks = todos::findTasks($_SESSION["userID"]);
         if(empty($tasks)){
           $_SESSION['message'] = "No Tasks to display";

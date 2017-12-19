@@ -23,8 +23,8 @@ table, th, td {
 
 .errorStyle {
 
-      width:400px;
-      margin-left:34%;
+      width:50%;
+      margin-left:24%;
       height:6%;
      padding-top:2px;
 

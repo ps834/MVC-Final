@@ -61,7 +61,8 @@ h1 {
 
       <div class="row">
         <div class="col-sm-2"><label><?php print("<b>" . $userName . "</b>"); ?></label></div>
-        <div class="col-sm-8"></div>
+        <div class="col-sm-7"></div>
+        <div class="col-sm-1"><a href="index.php?page=tasks&action=goToProfile" style="text-decoration:none;">My Tasks</a></div>
         <div class="col-sm-1"><a href="index.php?page=accounts&action=getMyProfile" style="text-decoration:none;">My Profile</a></div>
         <div class="col-sm-1"><a href="index.php?page=accounts&action=logout" style="text-decoration:none;">Logout</a> </div>
       </div>

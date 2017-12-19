@@ -41,10 +41,24 @@
 
 .errorStyle {
 
-      width:400px;
-      margin-left:34%;
+      width:50%;
+      margin-left:24%;
       height:6%;
       padding-top:2px;
+
+}
+.icon{
+  
+height:20px;
+margin-top:13px;
+}
+
+.noDeleteIcon{
+
+  
+height:20px;
+  margin-top:-12px;
+  margin-right:45px;
 
 }
 
@@ -68,7 +82,9 @@ include "header.php";
 <?php
 
 if (!empty($data)) {
+          $_SESSION['taskID'] = $data->id; 
          print utility\htmlTable::generateTableFromOneRecord($data);
+         
       }else{
             $_SESSION['message'] = "No Tasks to display";
       }
@@ -77,17 +93,22 @@ if (!empty($data)) {
 <?php 
 
 $message = $_SESSION['message'];
+
 if(strpos($message,'deleted')){ ?>
 <div class="alert alert-warning alert-dismissable errorStyle">
-    <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
+    <center><label id="error" name="error"><?php echo $_SESSION['message']  . "&nbsp;&nbsp;"; ?>
+                <a href="index.php?page=tasks&action=delete" class="close noDeleteIcon" data-dismiss="alert" aria-label="close">
+                <img src="yes_icon.png" alt="Yes" class="icon"></a></label></center>
+          <div>  <a href="index.php?page=tasks&action=goToProfile" class="close noDeleteIcon" data-dismiss="alert" aria-label="close">
+                <img src="no_icon.png" alt="No" class="noDeleteIcon"></a></div></label></center>
+            
 </div>
 <?php 
 } else if($_SESSION['message']!= " "){  ?>
 <div class="alert alert-success alert-dismissable errorStyle">
     
     <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
+            <a href="index.php?page=tasks&action=goToProfile" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
 </div>
 <?php } 
 
@@ -136,9 +157,13 @@ $_SESSION['message'] = " " ;
 </form>
 
 <div style="margin-left:50%;margin-top:-48px;">
-<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?>" method="post" id="form1">
+<!--<form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?>" method="post" id="form1">-->
+
+<!--<form action="index.php?page=tasks&action=confirmDelete" id="form1">
     <button type="submit" form="form1" value="delete" class="btn btn-info active" style="width:20%;height:33px;">Delete Task</button>
-</form>
+</form>-->
+
+<a href="index.php?page=tasks&action=confirmDelete" class="btn btn-info active" style="width:20%;height:33px;">Delete Task</a>
 </div>
 <br>
 

@@ -15,7 +15,7 @@ class routes{
         $routes[] = routeFactory::create('GET','all','accounts','accountsController','all'); 
         $routes[] = routeFactory::create('GET','show','accounts','accountsController','show'); 
         $routes[] = routeFactory::create('POST','login','accounts','accountsController','login');
-        $routes[] = routeFactory::create('POST','delete','tasks','tasksController','delete');
+        $routes[] = routeFactory::create('GET','delete','tasks','tasksController','delete');
         $routes[] = routeFactory::create('GET','delete','accounts','accountsController','delete');
         $routes[] = routeFactory::create('POST','delete','accounts','accountsController','delete');
         $routes[] = routeFactory::create('GET','edit','accounts','accountsController','edit');
@@ -30,6 +30,7 @@ class routes{
         $routes[] = routeFactory::create('GET','getMyProfile','accounts','accountsController','getMyProfile');
         $routes[] = routeFactory::create('GET','callEditProfile','accounts','accountsController','callEditProfile');
         $routes[] = routeFactory::create('GET','confirmDelete','accounts','accountsController','confirmDelete');
+        $routes[] = routeFactory::create('GET','confirmDelete','tasks','tasksController','confirmDelete');
         return $routes;
     }
 

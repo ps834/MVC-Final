@@ -58,10 +58,10 @@ class tasksController extends http\controller
         $user->save();
         
         if($taskStatus == 'update'){
-          self::setSuccessMessage("updated",$user->ownerid);
+          self::setSuccessMessage("Tasks updated successfully for Owner ID ",$user->ownerid);
           self::getTemplate('show_task', $user);
         }else{
-           self::setSuccessMessage("inserted",$user->ownerid);
+           self::setSuccessMessage("Task inserted successfully for Owner ID ",$user->ownerid);
            self::goToProfile();
         }
 
@@ -95,7 +95,7 @@ class tasksController extends http\controller
  
     public static function delete()
     {
-        $record = todos::findOne($_REQUEST['id']);
+        $record = todos::findOne($_SESSION['taskID']);
         $record->delete();
         self::goToProfile();
 
@@ -105,8 +105,14 @@ class tasksController extends http\controller
            if(session_status() == PHP_SESSION_NONE){
             session_start();
           } 
-          $_SESSION['message'] =  " Task " . $task . " successfully for Owner ID " . $id;
+          $_SESSION['message'] =   $task . $id;
     }
 
-
+    public static function confirmDelete(){
+      
+      self::setSuccessMessage("Your task will be deleted. Do you want to continue?", " " );
+        $record = todos::findOne($_SESSION['taskID']);
+        self::getTemplate('show_task', $record);
+      
+    }  
 }

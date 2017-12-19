@@ -72,7 +72,7 @@ class accountsController extends http\controller
           session_start();
         }
         $_SESSION['name']=$_POST['fname'];
-        self::setSuccessMessage(", your account has been updated successfully",$user->fname);
+        self::setSuccessMessage("Your account has been updated successfully");
         self::getMyProfile();
     }
 
@@ -158,17 +158,17 @@ class accountsController extends http\controller
     }
     
     
-    public static function setSuccessMessage($task,$id){
+    public static function setSuccessMessage($task){
            if(session_status() == PHP_SESSION_NONE){
             session_start();
           } 
           
-          $_SESSION['message'] =  $id . $task  ;
+          $_SESSION['message'] =   $task  ;
     }
     
     public static function confirmDelete(){
       
-      self::setSuccessMessage("Your profile will be deleted. Do you want to continue?", " " );
+      self::setSuccessMessage("Your profile will be deleted. Do you want to continue?");
       self::getMyProfile();  
       
     }

@@ -37,6 +37,21 @@ table, th, td {
     text-color:black;
 
 }
+
+.icon{
+  
+height:20px;
+margin-top:13px;
+}
+
+.noDeleteIcon{
+
+  
+height:20px;
+  margin-top:-12px;
+  margin-right:45px;
+
+}
 </style>
 
 
@@ -60,9 +75,11 @@ if(strpos($message, 'deleted')){ ?>
 
 
 <div class="alert alert-warning alert-dismissable errorStyle">
-    <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
-            <a href="index.php?page=accounts&action=delete" style="font-size:9pt;">Yes</a></label></center>
-            <a href="index.php?page=accounts&action=getMyProfile" class="close" data-dismiss="alert" aria-label="close" style="font-size:9pt;" >No</a></label></center>
+    <center><label id="error" name="error"><?php echo $_SESSION['message'] . "&nbsp;&nbsp;"; ?>
+            <a href="index.php?page=accounts&action=delete" class="close noDeleteIcon" data-dismiss="alert" aria-label="close" style="font-size:9pt;">
+                <img src="yes_icon.png" alt="Yes" class="icon"></a></label></center>
+          <div>  <a href="index.php?page=accounts&action=getMyProfile" class="close noDeleteIcon" data-dismiss="alert" aria-label="close" style="font-size:9pt;" >
+                <img src="no_icon.png" alt="No" class="noDeleteIcon"></a></div></label></center>
 </div>
 
 <?php } else if($message!= " "){  ?>

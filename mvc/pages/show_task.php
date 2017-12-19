@@ -74,11 +74,20 @@ if (!empty($data)) {
       }
 ?>
 
-<?php if($_SESSION['message']!= " "){  ?>
+<?php 
+
+$message = $_SESSION['message'];
+if(strpos($message,'deleted')){ ?>
+<div class="alert alert-warning alert-dismissable errorStyle">
+    <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
+</div>
+<?php 
+} else if($_SESSION['message']!= " "){  ?>
 <div class="alert alert-success alert-dismissable errorStyle">
     
     <center><label id="error" name="error"><?php echo $_SESSION['message']; ?>
-            <a href="" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a></label></center>
 </div>
 <?php } 
 
@@ -129,7 +138,6 @@ $_SESSION['message'] = " " ;
 <div style="margin-left:50%;margin-top:-48px;">
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?>" method="post" id="form1">
     <button type="submit" form="form1" value="delete" class="btn btn-info active" style="width:20%;height:33px;">Delete Task</button>
-    <!--<img src="images/Delete_Icon.png" alt="Delete" height="25" width="25">-->
 </form>
 </div>
 <br>
